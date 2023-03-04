@@ -1,12 +1,18 @@
 import { Profile } from "./Profile/Profile";
 import user from 'user';
+import { Statistics } from "./Statistics/Statistics";
+import data from 'data';
+import { FriendList } from "./FriendList/FriendList";
+import friends from 'friends';
+import {TransactionHistory} from './TransactionHistory/TransactionHistory'
+import transactions from 'transactions'
 
 export const App = () => {
   return (
     <div
       style={{
         height: '100vh',
-        display: 'flex',
+        // display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
@@ -20,6 +26,9 @@ export const App = () => {
       avatar={user.avatar}
       stats={user.stats}
       />
+      <Statistics title="Upload stats" stats={data} />
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />
     </div>
   );
 };
